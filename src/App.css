@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+.main {
+  background-color: #fff;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
   display: flex;
   flex-direction: column;
+}
+
+.top {
+  width: 200px;
+  height: 120px;
+  align-self: center;
+  margin: 20px 0;
+}
+
+.front {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 10px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.3);
+  backface-visibility: hidden;
+  background-image: linear-gradient(to right, #111, #555);
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+}
+
+.chip {
+  position: relative;
+  top: 30px;
+  left: 12px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 25px;
+  height: 20px;
+  border-radius: 2.5px;
+  background-image: linear-gradient(to bottom left, #ffecc7, #d0b978);
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.chip-line {
+  position: absolute;
+  width: 100%;
+  height: 0.5px;
+  background-color: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chip-line:nth-child(1) {
+  top: 5.5px;
+}
+.chip-line:nth-child(2) {
+  top: 10px;
+}
+.chip-line:nth-child(3) {
+  top: 14px;
+}
+.chip-line:nth-child(4) {
+  left: 12px;
+  width: 0.5px;
+  height: 25px;
+}
+
+.chip-main {
+  width: 10px;
+  height: 12.5px;
+  border: 0.5px solid #333;
+  border-radius: 1.5px;
+  background-image: linear-gradient(to bottom left, #efdbab, #e1cb94);
+  z-index: 1;
+}
+
+.wave {
+  position: relative;
+  top: 10px;
+  left: 50px;
+}
+
+.card-number {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 12.5px 3px;
+  font-size: 11.5px;
+  font-family: "cc font", monospace;
+}
+
+.card-holder {
+  margin: 5px 5.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: "cc font", monospace;
+}
+
+.master {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+}
+
+.tabitem {
+  cursor: pointer;
+  text-align: center;
+  width: 50%;
+  background-color: #280680;
+}
+
+.tabitem--inactive {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+.tabitem__title {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+}
+
+.content {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+ul {
+  text-align: left;
+}
+
+li {
+  list-style: none;
+  font-size: 16px;
 }
