@@ -3,36 +3,46 @@ import axios from "axios";
 
 import "./App.css";
 import ProfileGrid from "./components/main/ProfileGrid";
-import Header from "./components/header/Header";
-import Search from "./components/header/Search";
 
 const App = () => {
   const [items, setItems] = useState([]);
-  const [input, setInput] = useState("");
+  const [search, setSearch] = useState("");
+  const [filteredProfiles, setFilteredProfiles] = useState([]);
 
   useEffect(() => {
     const fetchProfiles = async () => {
       const result = await axios(`http://api.enye.tech/v1/challenge/records`);
       // console.log(result.data.records.profiles);
-      setItems(result.data.records.profiles);
+      const results = result.data.records.profiles;
+      // console.log(results);
+      setItems(results);
     };
 
     fetchProfiles();
   }, []);
 
-  const updateInput = async (input) => {
-    const filtered = items.filter((item) => {
-      return item.FirstName.toLowerCase().includes(input.toLowerCase());
-    });
-    setInput(input);
-    items(filtered);
-  };
+  useEffect(() => {
+    setFilteredProfiles(
+      items.filter((item) =>
+        item.FirstName.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search, items]);
 
   return (
     <div className="main">
-      {/* {console.log(items)} */}
-      <Search input={input} onChange={updateInput} />
-      <ProfileGrid items={items} />
+      <div className="header">
+        <input
+          type="text"
+          placeholder="Search"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+      <div className="cards">
+        {filteredProfiles.map((item) => (
+          <ProfileGrid {...item} />
+        ))}
+      </div>
     </div>
   );
 };

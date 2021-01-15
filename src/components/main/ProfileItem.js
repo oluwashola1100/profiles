@@ -1,7 +1,7 @@
 import React from "react";
 import Information from "./Information";
 
-const ProfileItem = ({ item }) => {
+const ProfileItem = ({ ...item }) => {
   return (
     <div className="card">
       <div className="top">
@@ -19,7 +19,7 @@ const ProfileItem = ({ item }) => {
           <div className="master">{item.CreditCardType}</div>
         </div>
       </div>
-      <Information item={item} />
+      <Information {...item} />
     </div>
   );
 };

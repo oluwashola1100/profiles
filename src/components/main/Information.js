@@ -15,7 +15,7 @@ const tabItems = [
   },
 ];
 
-const Information = ({ item }) => {
+const Information = ({ ...item }) => {
   const [active, setActive] = useState(1);
 
   return (

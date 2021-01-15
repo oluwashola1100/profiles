@@ -1,18 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import ProfileItem from "./ProfileItem";
 
-const ProfileGrid = ({ items }) => {
-  return (
-    <div className="cards">
-      {items.map((item) => {
-        return (
-          <>
-            <ProfileItem item={item} />
-          </>
-        );
-      })}
-    </div>
-  );
+const ProfileGrid = ({ ...item }) => {
+  return <ProfileItem {...item} />;
 };
 
 export default ProfileGrid;
