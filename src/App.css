@@ -9,6 +9,7 @@
   border-radius: 20px;
   display: flex;
   justify-content: center;
+  justify-self: center;
   align-items: center;
   box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.3);
 }
@@ -170,4 +171,15 @@ ul {
 li {
   list-style: none;
   font-size: 16px;
+}
+
+@media screen and (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
 }
