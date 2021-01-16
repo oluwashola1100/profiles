@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+// import ReactPaginate from "react-paginate";
 
 import "./App.css";
 import ProfileGrid from "./components/main/ProfileGrid";
