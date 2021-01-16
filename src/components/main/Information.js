@@ -35,17 +35,30 @@ const Information = ({ ...item }) => {
         {tabItems.map(({ id, content }) => {
           return active === id && id === 1 ? (
             <ul>
-              <li>{item.Email}</li>
-              <li>{item.PhoneNumber}</li>
-              <li>{item.DomainName}</li>
-              <li>{item.URL}</li>
+              <li>
+                <i class="bx bxs-envelope"></i>
+                {item.Email}
+              </li>
+              <li>
+                <i class="bx bxs-phone"></i>
+                {item.PhoneNumber}
+              </li>
+              <li>
+                <i class="bx bx-world"></i>
+                {item.DomainName}
+              </li>
+              <li>
+                <i class="bx bx-link"></i>
+                {item.URL}
+              </li>
             </ul>
           ) : active === id && id === 2 ? (
             <ul>
-              <li>{item.Gender}</li>
-              <li>{item.Latitude}</li>
-              <li>{item.Longitude}</li>
-              <li>{item.MacAddress}</li>
+              <li>Gender: {item.Gender}</li>
+              <li>Latitude: {item.Latitude}</li>
+              <li>Longitude: {item.Longitude}</li>
+              <li>MacAddress: {item.MacAddress}</li>
+              <li>LastLogin: {item.LastLogin}</li>
             </ul>
           ) : (
             ""
