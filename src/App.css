@@ -182,6 +182,34 @@ li i {
   margin-right: 6px;
 }
 
+.pagination {
+  margin: 15px 8px;
+  display: flex;
+  outline: none;
+  justify-content: center;
+}
+.pagination a {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #2811f0;
+  color: #2811f0;
+  cursor: pointer;
+}
+
+.pagination__link {
+  font-weight: 500;
+}
+
+.pagination__link--active a {
+  color: #fff;
+  background: #2811f0;
+}
+
+.pagination__link--disabled a {
+  color: #ddd;
+  border: 1px solid #ddd;
+}
+
 @media (max-width: 320px) {
   .cards {
     display: block;
