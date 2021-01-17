@@ -31,6 +31,10 @@
 .card {
   display: flex;
   flex-direction: column;
+  border: 1px solid #280680;
+  border-radius: 5px;
+  padding: 15px;
+  height: 410px;
 }
 
 .top {
